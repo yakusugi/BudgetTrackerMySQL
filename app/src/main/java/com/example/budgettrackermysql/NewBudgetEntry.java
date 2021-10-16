@@ -43,7 +43,7 @@ public class NewBudgetEntry extends AppCompatActivity {
         enterPrice = findViewById(R.id.enter_price);
         saveInfoButton = findViewById(R.id.save_button);
 
-        enterID.setText(budgetTracker.getId());
+//        enterID.setText(budgetTracker.getId());
 
         saveInfoButton.setOnClickListener(v -> {
             BudgetTrackerDao btDao = new BudgetTrackerDao();
@@ -55,7 +55,7 @@ public class NewBudgetEntry extends AppCompatActivity {
 
             String strEnterDate = enterDate.getText().toString();
             try {
-                Date date1=new SimpleDateFormat("dd-MM-yyyy").parse(strEnterDate);
+                Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(strEnterDate);
                 btDto.setDate(date1);
             } catch (ParseException e) {
                 e.printStackTrace();
