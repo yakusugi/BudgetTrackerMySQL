@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BudgetTrackerMySQL</string>
+    <string name="id_hint">Enter ID</string>
+    <string name="date_hint">Enter Date</string>
+    <string name="store_name_hint">Enter Store Name</string>
+    <string name="product_name_hint">Enter Product Name</string>
+    <string name="product_type_hint">Enter Product Type</string>
+    <string name="price_hint">Enter price</string>
+    <string name="save_text">Save</string>
+</resources>
