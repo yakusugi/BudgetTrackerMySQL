@@ -17,16 +17,21 @@ public class BudgetTrackerDao {
 
         int rowsCount = 0;
 
-        con= DriverManager.getConnection("jdbc:mysql://192.168.0.32:3306/budgettracker?characterEncoding=utf8","and_user","android0216");
+        String insertSQL = "INSERT INTO 2019_records(id, date, storename, productname, type, price) " +
+                "VALUES('" + budgetTracker.getId() + "','" + budgetTracker.getDate() + "'," + budgetTracker.getStoreName() + "'," + budgetTracker.getProductName() + "'," + budgetTracker.getType() + "'," + budgetTracker.getPrice() +")";
+try {
+    con= DriverManager.getConnection("jdbc:mysql://192.168.0.32:3306/budgettracker?characterEncoding=utf8","and_user","android0216");
 //        con= DriverManager.getConnection("jdbc:mysql://192.168.0.32:3306/budgettracker","and_user","android0216");
-        smt=con.createStatement();
+    smt=con.createStatement();
 //        ResultSet rs=smt.executeQuery("select * from 2019_records");
 
-        String insertSQL = "INSERT INTO 2019_records(id, date, storename, productname, type, price) " +
-        "VALUES('" + budgetTracker.getId() + "','" + budgetTracker.getDate() + "'," + budgetTracker.getStoreName() + "'," + budgetTracker.getProductName() + "'," + budgetTracker.getType() + "'," + budgetTracker.getPrice() +")";
+    // SQL文発行
+    rowsCount = smt.executeUpdate(insertSQL);
+} catch (SQLException e) {
+    System.out.println("Errorが発生しました！\n"+ e +"\n");
 
-        // SQL文発行
-        rowsCount = smt.executeUpdate(insertSQL);
+}
+
         return rowsCount;
     }
 
