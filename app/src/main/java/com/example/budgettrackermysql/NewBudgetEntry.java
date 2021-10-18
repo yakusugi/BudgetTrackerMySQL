@@ -65,10 +65,10 @@ public class NewBudgetEntry extends AppCompatActivity {
             btDto.setStoreName(strEnterStoreName);
 
             String strEnterProductName = enterProductName.getText().toString();
-            btDto.setStoreName(strEnterProductName);
+            btDto.setProductName(strEnterProductName);
 
             String strEnterProductType = enterProductType.getText().toString();
-            btDto.setStoreName(strEnterProductType);
+            btDto.setType(strEnterProductType);
 
             String strEnterPrice = enterPrice.getText().toString();
             btDto.setPrice(Integer.parseInt(strEnterPrice));

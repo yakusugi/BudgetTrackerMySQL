@@ -18,6 +18,7 @@ public class BudgetTrackerDao {
         int rowsCount = 0;
 
         con= DriverManager.getConnection("jdbc:mysql://192.168.0.32:3306/budgettracker?characterEncoding=utf8","and_user","android0216");
+//        con= DriverManager.getConnection("jdbc:mysql://192.168.0.32:3306/budgettracker","and_user","android0216");
         smt=con.createStatement();
 //        ResultSet rs=smt.executeQuery("select * from 2019_records");
 
